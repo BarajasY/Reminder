@@ -30,6 +30,22 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      render :json => @article
+    else
+      render :edit, status::unprocessable_entity
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    head :ok
+  end
 
   private
   def article_params
