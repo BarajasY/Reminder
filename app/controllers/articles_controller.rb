@@ -35,9 +35,9 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      render :json => @article
+      head :ok
     else
-      render :edit, status::unprocessable_entity
+      render :status 404
     end
   end
 
