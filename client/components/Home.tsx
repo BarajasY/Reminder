@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AiOutlineCaretRight } from "react-icons/ai";
 import style from "../styles/home.module.css";
-import { useNavigate } from "react-router-dom";
 import { useRouter } from "next/navigation";
 
 const Home = () => {

@@ -22,9 +22,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      render :json => @article
+      # this will return the create.html.erb file
     else
-      render :new, status::unprocessable_entity
+      # this will return a 404 in case item could not be created.
+      head :status => 404
     end
   end
 
@@ -37,7 +38,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       head :ok
     else
-      render :status 404
+      head :status => 404
     end
   end
 

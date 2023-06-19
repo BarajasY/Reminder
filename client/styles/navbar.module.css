@@ -1,0 +1,31 @@
+.navbarContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.navbarContent {
+    margin: 10px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarIcon {
+    font-size: 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.navbarIcon:hover {
+    color: var(--lightblued);
+}
+
+#browse {
+    color: var(--lightblue);
+}
