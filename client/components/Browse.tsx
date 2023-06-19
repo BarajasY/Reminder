@@ -12,7 +12,12 @@ const Browse = () => {
     if(error) console.log(error)
 
     const deleteArticle = async (id:number) => {
-        const data = fetch("http://localhost:5000/article")
+        const del = await fetch(`http://localhost:5000/articles/${id}`, {
+            method: "DELETE",
+        })
+        if(del.ok) {
+            window.location.reload();
+        }
     }
 
   return (
@@ -22,7 +27,7 @@ const Browse = () => {
                 <h1>{article.title}</h1>
                 <p>{article.duedate}</p>
                 <div className={style.articleDelete}>
-                    <button>Delete</button>
+                    <button onClick={() => deleteArticle(article.id)}>Delete</button>
                 </div>
             </div>
         ))}

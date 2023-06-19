@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def allow_credentials_headers
+    response.headers["Access-Control-Allow-Origin"] = "*"
+  end
+
   def index
     @articles = Article.all
     render :json =>@articles
